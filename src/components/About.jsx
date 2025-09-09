@@ -7,7 +7,7 @@ const About = () => {
       <h1 className="text-5xl font-bold text-leafs-blue mb-8 text-center">About Us</h1>
 
       <div className="bg-white p-8 rounded-xl shadow-2xl transition-shadow duration-300 hover:shadow-[0_10px_20px_rgba(0,32,91,0.2)]">
-        {/* Full-bleed image inside the card (removes left/right padding whitespace) */}
+        {/* Full-bleed image inside the card to avoid awkward side padding */}
         <div className="-mx-8 -mt-8 mb-6 overflow-hidden rounded-t-xl">
           <img
             src={charityImg}

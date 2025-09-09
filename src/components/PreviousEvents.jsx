@@ -1,4 +1,5 @@
 import React from 'react';
+import group from '../images/group.jpg';
 
 const PreviousEvents = () => {
   return (
@@ -7,8 +8,8 @@ const PreviousEvents = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="bg-white p-6 rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105 hover:shadow-[0_10px_20px_rgba(0,32,91,0.2)]">
           <img
-            src="src\images\group.jpg"
-            alt="Event 1 Image"
+            src={group}
+            alt="Event 1"
             className="w-full h-48 sm:h-64 object-cover mb-6 rounded-t-xl"
           />
           <h3 className="text-2xl font-semibold text-leafs-blue mb-2">Event 1</h3>

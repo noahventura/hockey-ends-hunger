@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import rink from '../images/rink.jpg';
+import logoWhite from '../images/logowhite.png';
+import handshake from '../images/handshake.jpg';
 
 const Home = () => {
   return (
     <div className="pt-16">
       <div className="relative h-[70vh] md:h-[calc(100vh-4rem)] overflow-hidden">
         <img
-          src="src\images\rink.jpg"
+          src={rink}
           alt="Hero Image"
           className="w-full h-full object-cover filter brightness-75 transition-transform duration-500 hover:scale-105"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-b from-transparent to-leafs-blue/30">
           <img
-            src="src\images\logowhite.png"
-            alt="Logo"
+            src={logoWhite}
+            alt="Hockey Ends Hunger Logo"
             className="h-32 mb-6 transition-transform duration-200 hover:scale-105"
           />
           <div className="flex items-center mb-8">
@@ -36,7 +39,7 @@ const Home = () => {
       >
         <div className="flex-1 overflow-hidden rounded-xl shadow-xl transition-transform duration-300 hover:scale-105">
           <img
-            src="src\images\handshake.jpg"
+            src={handshake}
             alt="Next Event"
             className="w-full h-auto object-cover"
           />
