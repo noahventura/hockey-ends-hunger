@@ -12,7 +12,6 @@ const About = () => {
       {/* Reduce entire box width on desktop only */}
       <div className="w-full md:max-w-3xl mx-auto">
         <div className="bg-white p-6 md:p-8 rounded-xl shadow-2xl transition-shadow duration-300 hover:shadow-[0_10px_20px_rgba(0,32,91,0.2)]">
-          {/* Full-bleed wrapper; image scales without clipping */}
           <div className="-mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 overflow-hidden rounded-t-xl bg-white">
             <img
               src={charityImg}
