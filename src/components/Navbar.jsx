@@ -38,6 +38,7 @@ const Navbar = () => {
           </RouterLink>
           {isOpen && (
             <div className="absolute top-16 left-4 bg-white shadow-lg rounded-lg p-6 flex flex-col gap-4 animate-fadeIn">
+              <RouterLink to="/" onClick={toggleMenu} className="text-leafs-blue hover:text-leafs-blue/80 font-semibold text-lg">Home</RouterLink>
               <RouterLink to="/about" onClick={toggleMenu} className="text-leafs-blue hover:text-leafs-blue/80 font-semibold text-lg">About Us</RouterLink>
               <RouterLink to="/previous-events" onClick={toggleMenu} className="text-leafs-blue hover:text-leafs-blue/80 font-semibold text-lg">Previous Events</RouterLink>
               <RouterLink to="/upcoming-events" onClick={toggleMenu} className="text-leafs-blue hover:text-leafs-blue/80 font-semibold text-lg">Upcoming Events</RouterLink>
