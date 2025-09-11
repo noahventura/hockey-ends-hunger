@@ -21,7 +21,8 @@ const Home = () => {
             alt="Hockey Ends Hunger"
             className="h-28 md:h-32 mb-6 transition-transform duration-200 hover:scale-105"
           />
-          <div className="flex items-center mb-8 translate-x-2 md:translate-x-4">
+          {/* Slight nudge on mobile, minimal on desktop */}
+          <div className="flex items-center mb-8 translate-x-2 md:translate-x-1">
             <p className="text-2xl font-light text-white text-shadow mr-2 md:mr-3">EST. 2023</p>
             <div className="w-px h-8 md:h-10 bg-white ml-2 md:ml-3 mr-4"></div>
             <RouterLink
