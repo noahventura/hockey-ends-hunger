@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import rink from '../images/rink.jpg';
 import logoWhite from '../images/logowhite.png';
-import handshake from '../images/handshake.jpg';
-import poster from '../images/poster.png';
 
 const Home = () => {
-  const [showPoster, setShowPoster] = useState(false);
+  // EVENT PASSED - Commented out popup
+  // const [showPoster, setShowPoster] = useState(false); 
 
-  useEffect(() => {
-    const hasSeenPoster = localStorage.getItem('hasSeenPoster');
-    if (!hasSeenPoster) {
-      setShowPoster(true);
-      localStorage.setItem('hasSeenPoster', 'true');
-    }
-  }, []);
+  // useEffect(() => {
+  //   const hasSeenPoster = localStorage.getItem('hasSeenPoster');
+  //   if (!hasSeenPoster) {
+  //     setShowPoster(true);
+  //     localStorage.setItem('hasSeenPoster', 'true');
+  //   }
+  // }, []);
 
-  const closePoster = () => setShowPoster(false);
+  // const closePoster = () => setShowPoster(false);
 
   return (
-    <div className="pt-16 relative">
-      {/* Poster Popup */}
-      {showPoster && (
+    <div className="pt-20 md:pt-16 relative">
+      {/* EVENT PASSED - Commented out Poster Popup */}
+      {/* {showPoster && (
         <div
           onClick={closePoster}
           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
@@ -30,7 +29,6 @@ const Home = () => {
             onClick={(e) => e.stopPropagation()}
             className="relative bg-white rounded-lg shadow-2xl overflow-hidden flex items-center justify-center p-2"
           >
-            {/* Close Button */}
             <button
               onClick={closePoster}
               className="absolute top-2 right-2 text-white bg-black/50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/70 transition"
@@ -38,7 +36,6 @@ const Home = () => {
               ✕
             </button>
 
-            {/* Poster Image */}
             <img
               src={poster}
               alt="Event Poster"
@@ -54,20 +51,20 @@ const Home = () => {
             />
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Hero */}
-      <div className="relative h-[80vh] md:h-[calc(100vh-4rem)] overflow-hidden">
+      <div className="relative h-[calc(100vh-4rem)] overflow-hidden">
         <img
           src={rink}
-          alt="Hockey rink"
+          alt="Hockey ends hunger charity hockey game with Aurora Mayor Tom Mrakas"
           className="w-full h-full object-cover filter brightness-75 transition-transform duration-500 hover:scale-105"
           loading="eager"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-b from-transparent to-leafs-blue/30 px-4">
           <img
             src={logoWhite}
-            alt="Hockey Ends Hunger"
+            alt="Hockey Ends Hunger maple leaf logo"
             className="h-28 md:h-32 mb-6 transition-transform duration-200 hover:scale-105"
           />
           <div className="flex items-center mb-8 translate-x-2 md:translate-x-1">
@@ -82,8 +79,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Down Arrow (mobile only) */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden animate-bounce">
+        {/* EVENT PASSED - Commented out down arrow since next-event section is removed */}
+        {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden animate-bounce">
           <button
             onClick={() =>
               document.getElementById("next-event")?.scrollIntoView({ behavior: "smooth" })
@@ -92,11 +89,11 @@ const Home = () => {
           >
             ▼
           </button>
-        </div>
+        </div> */}
       </div>
 
-      {/* Next Event */}
-      <div id="next-event" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* EVENT PASSED - Commented out Next Event Section */}
+      {/* <div id="next-event" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="overflow-hidden rounded-xl shadow-xl transition-transform duration-300 hover:scale-[1.01]">
             <img
@@ -132,7 +129,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
