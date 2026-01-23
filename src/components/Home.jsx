@@ -18,7 +18,7 @@ const Home = () => {
   // const closePoster = () => setShowPoster(false);
 
   return (
-    <div className="pt-20 md:pt-16 relative">
+    <div className="pt-16 relative">
       {/* EVENT PASSED - Commented out Poster Popup */}
       {/* {showPoster && (
         <div
@@ -54,7 +54,7 @@ const Home = () => {
       )} */}
 
       {/* Hero */}
-      <div className="relative h-[calc(100vh-4rem)] overflow-hidden">
+      <div className="relative h-[calc(100dvh-4rem)] overflow-hidden">
         <img
           src={rink}
           alt="Hockey ends hunger charity hockey game with Aurora Mayor Tom Mrakas"

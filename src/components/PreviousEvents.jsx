@@ -61,7 +61,7 @@ const PreviousEvents = () => {
       images: images2024,
       alt: "2024 Charity Hockey Game",
       title: "2024 Charity Hockey Game",
-      description: "In 2024, thanks to the support of local businesses, players, and fans, we proudly:",
+      description: "Thanks to the support of local players, businesses and fans, we proudly:",
       achievements: [
         "Raised over $2,200 for the Aurora Food Pantry",
         "Collected over 550 lbs of food donations",
@@ -112,7 +112,7 @@ const PreviousEvents = () => {
                 <img
                   src={images2025[currentImage2025].src}
                   alt={images2025[currentImage2025].alt}
-                  className="w-full h-96 object-cover"
+                  className="w-full h-64 md:h-96 object-cover scale-[1.15] md:scale-100"
                   style={
                     currentImage2025 === 2 || currentImage2025 === 3
                       ? { objectPosition: 'center 40%' }
@@ -154,7 +154,7 @@ const PreviousEvents = () => {
                 <img
                   src={images2024[currentImage2024].src}
                   alt={images2024[currentImage2024].alt}
-                  className="w-full h-96 object-cover"
+                  className="w-full h-64 md:h-96 object-cover scale-110 md:scale-100"
                   style={
                     currentImage2024 === 0
                       ? { objectPosition: 'center 35%' }
