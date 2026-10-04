@@ -9,7 +9,7 @@ import groupIce2025 from '../images/2025/group_ice.jpg';
 import rafflePrizes from '../images/2025/raffle_prizes.jpg';
 
 const PreviousEvents = () => {
-  const [currentEvent, setCurrentEvent] = useState(0);
+  const [currentEvent, setCurrentEvent] = useState(1); // newest year first
   const [currentImage2025, setCurrentImage2025] = useState(0);
   const [currentImage2024, setCurrentImage2024] = useState(0);
 
@@ -45,18 +45,6 @@ const PreviousEvents = () => {
 
   const events = [
     {
-      year: "2025",
-      images: images2025,
-      alt: "2025 Charity Hockey Game",
-      title: "2025 Charity Hockey Game",
-      description: "Our biggest year yet! Thanks to the incredible support of our community:",
-      achievements: [
-        "Raised over $4,200 for the Aurora Food Pantry",
-        "Collected over 1,661 lbs of food donations",
-        "Hosted our largest after-party with amazing raffle prizes"
-      ]
-    },
-    {
       year: "2024",
       images: images2024,
       alt: "2024 Charity Hockey Game",
@@ -66,6 +54,18 @@ const PreviousEvents = () => {
         "Raised over $2,200 for the Aurora Food Pantry",
         "Collected over 550 lbs of food donations",
         "Hosted an after-party with amazing raffle prizes"
+      ]
+    },
+    {
+      year: "2025",
+      images: images2025,
+      alt: "2025 Charity Hockey Game",
+      title: "2025 Charity Hockey Game",
+      description: "Our biggest year yet! Thanks to the incredible support of our community:",
+      achievements: [
+        "Raised over $4,200 for the Aurora Food Pantry",
+        "Collected over 1,661 lbs of food donations",
+        "Hosted our largest after-party with amazing raffle prizes"
       ]
     }
   ];
@@ -79,8 +79,8 @@ const PreviousEvents = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-16 bg-white">
-      <h1 className="text-2xl md:text-4xl font-bold text-leafs-blue mb-4 md:mb-4 text-center">
+    <div className="page">
+      <h1 className="page-title mb-10">
         Previous Events
       </h1>
 
@@ -88,7 +88,7 @@ const PreviousEvents = () => {
         {/* Navigation Arrows - Desktop only - Hidden when carousel has arrows */}
         <button
           onClick={prevEvent}
-          className="hidden lg:flex absolute -left-16 bg-black hover:bg-black/80 text-white rounded-full w-12 h-12 items-center justify-center transition-all duration-200 z-10"
+          className="hidden lg:flex absolute -left-16 bg-navy hover:bg-rush text-white rounded-full w-12 h-12 items-center justify-center transition-all duration-200 z-10"
           style={{ top: '260px' }}
           aria-label="Previous event"
         >
@@ -97,7 +97,7 @@ const PreviousEvents = () => {
 
         <button
           onClick={nextEvent}
-          className="hidden lg:flex absolute -right-16 bg-black hover:bg-black/80 text-white rounded-full w-12 h-12 items-center justify-center transition-all duration-200 z-10"
+          className="hidden lg:flex absolute -right-16 bg-navy hover:bg-rush text-white rounded-full w-12 h-12 items-center justify-center transition-all duration-200 z-10"
           style={{ top: '260px' }}
           aria-label="Next event"
         >
@@ -105,9 +105,9 @@ const PreviousEvents = () => {
         </button>
 
         {/* Event Card */}
-        <div className="bg-white p-6 rounded-xl shadow-2xl transition-shadow duration-300 hover:shadow-[0_10px_20px_rgba(0,32,91,0.2)]">
+        <div className="card p-6">
           <div className="overflow-hidden rounded-xl mb-5 relative">
-            {currentEvent === 0 ? (
+            {currentEvent === 1 ? (
               <>
                 <img
                   src={images2025[currentImage2025].src}
@@ -197,10 +197,10 @@ const PreviousEvents = () => {
               </>
             )}
           </div>
-          <h3 className="text-2xl font-semibold text-leafs-blue mb-3">
+          <h3 className="font-display text-2xl md:text-3xl font-semibold uppercase tracking-wide mb-3">
             {events[currentEvent].title}
           </h3>
-          <div className="text-leafs-blue/90 text-base leading-relaxed space-y-2">
+          <div className="text-navy/90 text-base leading-relaxed space-y-2">
             <p>{events[currentEvent].description}</p>
             <ul className="list-disc pl-5 space-y-1">
               {events[currentEvent].achievements.map((achievement, index) => (
@@ -216,7 +216,7 @@ const PreviousEvents = () => {
                 key={index}
                 onClick={() => setCurrentEvent(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                  index === currentEvent ? 'bg-leafs-blue w-6' : 'bg-leafs-blue/30'
+                  index === currentEvent ? 'bg-navy w-6' : 'bg-navy/25'
                 }`}
                 aria-label={`Go to ${events[index].year} event`}
               />
@@ -231,26 +231,24 @@ const PreviousEvents = () => {
                   key={index}
                   onClick={() => setCurrentEvent(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                    index === currentEvent ? 'bg-leafs-blue w-6' : 'bg-leafs-blue/30'
+                    index === currentEvent ? 'bg-navy w-6' : 'bg-navy/25'
                   }`}
                   aria-label={`Go to ${events[index].year} event`}
                 />
               ))}
             </div>
             <div className="flex justify-center">
-              {currentEvent === 0 ? (
+              {currentEvent === 1 ? (
                 <button
-                  onClick={nextEvent}
-                  style={{ backgroundColor: '#00205B' }}
-                  className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 hover:opacity-80"
+                  onClick={prevEvent}
+                  className="btn-navy w-full"
                 >
                   ← Previous (2024)
                 </button>
               ) : (
                 <button
-                  onClick={prevEvent}
-                  style={{ backgroundColor: '#00205B' }}
-                  className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 hover:opacity-80"
+                  onClick={nextEvent}
+                  className="btn-navy w-full"
                 >
                   Next → (2025)
                 </button>

@@ -76,13 +76,13 @@ const About = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-16 bg-white">
-      <h1 className="text-2xl md:text-4xl font-bold text-leafs-blue mb-4 md:mb-4 text-center">
+    <div className="page">
+      <h1 className="page-title mb-10">
         About Us
       </h1>
 
       <div className="w-full md:max-w-3xl mx-auto">
-        <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl transition-shadow duration-300 hover:shadow-[0_10px_20px_rgba(0,32,91,0.2)]">
+        <div className="card p-4 md:p-6">
           <div className="-mx-4 md:-mx-6 -mt-4 md:-mt-6 mb-4 overflow-hidden rounded-t-xl bg-white relative group h-[50vh] md:h-[55vh] flex items-center justify-center">
             {slides.map((slide, index) => (
               <img
@@ -134,10 +134,10 @@ const About = () => {
           </div>
 
           <div className="space-y-2 md:space-y-3">
-            <h2 className="text-xl md:text-2xl font-bold text-leafs-blue">
+            <h2 className="font-display text-2xl md:text-3xl font-semibold uppercase tracking-wide">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-sm md:text-base text-leafs-blue/90 leading-relaxed">
+            <p className="text-sm md:text-base text-navy/90 leading-relaxed">
               {slides[currentSlide].description}
             </p>
           </div>

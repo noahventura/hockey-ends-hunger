@@ -2,134 +2,66 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import rink from '../images/rink.jpg';
 import logoWhite from '../images/logowhite.png';
+import PosterPopup from './PosterPopup';
+import EventIntro from './EventIntro';
+import { event2026 as ev } from '../data/event';
 
 const Home = () => {
-  // EVENT PASSED - Commented out popup
-  // const [showPoster, setShowPoster] = useState(false); 
-
-  // useEffect(() => {
-  //   const hasSeenPoster = localStorage.getItem('hasSeenPoster');
-  //   if (!hasSeenPoster) {
-  //     setShowPoster(true);
-  //     localStorage.setItem('hasSeenPoster', 'true');
-  //   }
-  // }, []);
-
-  // const closePoster = () => setShowPoster(false);
-
   return (
-    <div className="pt-16 relative">
-      {/* EVENT PASSED - Commented out Poster Popup */}
-      {/* {showPoster && (
-        <div
-          onClick={closePoster}
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="relative bg-white rounded-lg shadow-2xl overflow-hidden flex items-center justify-center p-2"
-          >
-            <button
-              onClick={closePoster}
-              className="absolute top-2 right-2 text-white bg-black/50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/70 transition"
-            >
-              ✕
-            </button>
-
-            <img
-              src={poster}
-              alt="Event Poster"
-              className="
-                w-auto
-                h-auto
-                max-w-[90vw]
-                max-h-[85vh]
-                rounded-md
-                shadow-lg
-                object-contain
-              "
-            />
-          </div>
-        </div>
-      )} */}
+    <div>
+      <PosterPopup />
 
       {/* Hero */}
-      <div className="relative h-[calc(100dvh-4rem)] overflow-hidden">
+      <div className="relative h-svh min-h-[560px] overflow-hidden bg-navy-deep">
         <img
           src={rink}
           alt="Hockey ends hunger charity hockey game with Aurora Mayor Tom Mrakas"
-          className="w-full h-full object-cover filter brightness-75 transition-transform duration-500 hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-b from-transparent to-leafs-blue/30 px-4">
-          <img
-            src={logoWhite}
-            alt="Hockey Ends Hunger maple leaf logo"
-            className="h-28 md:h-32 mb-6 transition-transform duration-200 hover:scale-105"
-          />
-          <div className="flex items-center mb-8 translate-x-2 md:translate-x-1">
-            <p className="text-2xl font-light text-white text-shadow mr-2 md:mr-3">EST. 2023</p>
-            <div className="w-px h-8 md:h-10 bg-white ml-2 md:ml-3 mr-4"></div>
-            <RouterLink
-              to="/about"
-              className="text-2xl font-semibold text-white text-shadow hover:text-leafs-blue/80 transition duration-200"
-            >
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy/45 to-navy-deep/90" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-16 text-center">
+          <img src={logoWhite} alt="Hockey Ends Hunger maple leaf logo" className="mb-6 h-32 md:h-40" />
+          <p className="font-display text-xl md:text-2xl font-light uppercase tracking-[0.3em] text-white text-shadow">
+            Est. 2023
+          </p>
+          <h1 className="mt-3 max-w-2xl font-display text-3xl md:text-5xl font-bold uppercase tracking-wide text-white text-shadow">
+            Fighting food insecurity through hockey
+          </h1>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <RouterLink to="/upcoming-events" className="btn-primary">
+              {ev.month} {ev.day} Event Details
+            </RouterLink>
+            <RouterLink to="/about" className="btn-ghost">
               Learn More
             </RouterLink>
           </div>
         </div>
 
-        {/* EVENT PASSED - Commented out down arrow since next-event section is removed */}
-        {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden animate-bounce">
-          <button
-            onClick={() =>
-              document.getElementById("next-event")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="text-white text-3xl focus:outline-none"
+        <button
+          onClick={() => document.getElementById('next-event')?.scrollIntoView({ behavior: 'smooth' })}
+          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-3xl text-white focus:outline-none"
+          aria-label="Scroll to next event"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="block h-8 w-8 animate-float will-change-transform"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            ▼
-          </button>
-        </div> */}
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
       </div>
 
-      {/* EVENT PASSED - Commented out Next Event Section */}
-      {/* <div id="next-event" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="overflow-hidden rounded-xl shadow-xl transition-transform duration-300 hover:scale-[1.01]">
-            <img
-              src={handshake}
-              alt="Charity event handshake"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-          <div className="space-y-4 max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-leafs-blue">
-              Upcoming Event: Hockey Game
-            </h2>
-
-            <div className="text-base md:text-lg text-leafs-blue/90 leading-relaxed space-y-2">
-              <p><span className="font-semibold text-leafs-blue">Date:</span> November 29, 2025</p>
-              <p>
-                <span className="font-semibold text-leafs-blue">Venue:</span> Stronach Aurora Recreation Complex
-                <span className="block">1400 Wellington St E, Aurora, ON L4G 7B6</span>
-              </p>
-              <p>
-                <span className="font-semibold text-leafs-blue">After-Party:</span> TJs Bar and Grill (7:30pm – late)
-                <span className="block">17335 Yonge St, Newmarket, ON L3Y 8Z2</span>
-              </p>
-            </div>
-
-            <a
-              href="/upcoming-events"
-              className="inline-block bg-leafs-blue text-white font-semibold px-5 py-3 rounded-lg hover:bg-leafs-blue/80 transition duration-200"
-            >
-              Get Tickets
-            </a>
-          </div>
-        </div>
-      </div> */}
+      {/* Next event */}
+      <section id="next-event" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <EventIntro showButton />
+      </section>
     </div>
   );
 };
