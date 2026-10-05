@@ -31,7 +31,7 @@ export const mapLink = (address) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
 export const sponsors2025 = [
-  'Volpe Acorn Real Estate Team',
+  'VolpeAlcorn Real Estate Team',
   'EngA',
   'The Aurora Rotary Club',
   'Mercato on Main',
