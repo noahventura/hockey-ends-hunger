@@ -1,4 +1,6 @@
-@import "tailwindcss";
+/* scan only the original site's own source for class names (not v2, docs or the build folder) */
+@import "tailwindcss" source(".");
+@source not "./v2";
 
 @theme {
   --color-navy: #00205b;

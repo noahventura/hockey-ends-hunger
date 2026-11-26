@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hockey Ends Hunger//2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Hockey Ends Hunger 2026
+BEGIN:VEVENT
+UID:charity-game-2026@hockeyendshunger.com
+DTSTAMP:20261122T000000Z
+DTSTART:20261128T220000Z
+DTEND:20261129T000000Z
+SUMMARY:Hockey Ends Hunger charity game
+LOCATION:Aurora Recreation Complex\, 1400 Wellington Street East\, Aurora\, ON L4G 7B5
+DESCRIPTION:Bring a non-perishable food item as a donation. Everyone is welcome. All proceeds go to the Aurora Food Pantry. https://www.hockeyendshunger.com/upcoming-events
+URL:https://www.hockeyendshunger.com/upcoming-events
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hockey Ends Hunger: bring a non-perishable item
+TRIGGER:-PT3H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:after-party-2026@hockeyendshunger.com
+DTSTAMP:20261122T000000Z
+DTSTART:20261129T003000Z
+DTEND:20261129T060000Z
+SUMMARY:Hockey Ends Hunger after party and raffle
+LOCATION:The George Whiskey Lounge\, 238 Main St\, Newmarket\, ON L3Y 3Z5
+DESCRIPTION:Raffle prizes drawn at the after party. Tickets are cash only\, sold at the event. All proceeds go to the Aurora Food Pantry.
+URL:https://www.hockeyendshunger.com/upcoming-events
+END:VEVENT
+END:VCALENDAR
